@@ -2,7 +2,7 @@ print("="*45)
 print("   🌡️ Advanced Temperature Converter")
 print("="*45)
 
-history=[]
+history = []
 
 while True:
     print("\nChoose conversion:")
@@ -11,14 +11,19 @@ while True:
     print("3. Celsius → Kelvin")
     print("4. Kelvin → Celsius")
     print("5. View History")
-    print("6. Exit")
-    print("7. Clear History")
+    print("6. Clear History")
+    print("7. Exit")
 
-    choice = input("Enter choice (1-6): ").strip()
+    choice = input("Enter choice (1-7): ").strip()
 
-    if choice == "6":
+    if choice == "7":
         print("👋 Exiting program. Thank you!")
         break
+
+    elif choice == "6":
+        history.clear()
+        print("🗑️ History cleared!")
+        continue
 
     elif choice == "5":
         print("\n📜 Conversion History:")
@@ -29,8 +34,13 @@ while True:
                 print(item)
         continue
 
+    elif choice == "7":
+        history.clear()
+        print("🗑️ History cleared!")
+        continue
+
     if choice not in ["1", "2", "3", "4"]:
-        print("❌ Invalid choice! Please select 1–6.")
+        print("❌ Invalid choice! Please select 1–7.")
         continue
 
     try:
@@ -46,23 +56,23 @@ while True:
 
     if choice == "1":
         result = (temp * 9/5) + 32
-        output = f"{temp}°C → {round(result,2)}°F"
+        output = f"{temp}°C → {round(result, 2)}°F"
 
     elif choice == "2":
         result = (temp - 32) * 5/9
-        output = f"{temp}°F → {round(result,2)}°C"
+        output = f"{temp}°F → {round(result, 2)}°C"
 
     elif choice == "3":
         result = temp + 273.15
-        output = f"{temp}°C → {round(result,2)}K"
+        output = f"{temp}°C → {round(result, 2)}K"
 
     elif choice == "4":
         result = temp - 273.15
-        output = f"{temp}K → {round(result,2)}°C"
+        output = f"{temp}K → {round(result, 2)}°C"
 
     print("\n" + "="*40)
     print("✅ Result:", output)
     print("="*40)
 
-# Save to history
+    # Save to history
     history.append(output)
