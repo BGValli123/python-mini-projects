@@ -1,7 +1,7 @@
 
 ---
 
-# 📄 3. LEVEL 2 README
+# 📄  LEVEL 2 README
 
 Save as: `level-2/README.md`
 
